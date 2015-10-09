@@ -1,8 +1,8 @@
 import java.awt.Graphics;
 
 
-public class ProtectWithFrontShield implements ProtectBehavior {
+public class ProtectWithFrontShield implements ProtectionBehavior {
 	public void protect(Graphics g) {
-		g.drawLine(50, 0, 50, 50);;
+		g.drawLine(330, 250, 330, 310);
 	}
 }

@@ -1,25 +1,22 @@
 import java.awt.Graphics;
+import java.awt.Image;
 
 
 public abstract class Spaceship {
 	FlyBehavior flyBehavior;
 	ShootBehavior shootBehavior;
-	ProtectBehavior protectBehavior;
-	Graphics g;
-	Spaceship(Graphics g) {
-		this.g = g;
+	ProtectionBehavior protectionBehavior;
+	Image img;
+	Spaceship() {
+		flyBehavior = new DontFly();
+		shootBehavior = new DontShoot();
+		protectionBehavior = new NoProtection();
 	}
-	public void paint() {
-		
-	}
-	public void fly() {
+	public void paint(Graphics g) {
+		g.drawImage(img, 250, 250, null);
 		flyBehavior.fly(g);
-	}
-	public void shoot() {
 		shootBehavior.shoot(g);
-	}
-	public void protect() {
-		protectBehavior.protect(g);
+		protectionBehavior.protect(g);
 	}
 	public void setFlyBehavior(FlyBehavior fb) {
 		flyBehavior = fb;
@@ -27,7 +24,7 @@ public abstract class Spaceship {
 	public void setShootBehavior(ShootBehavior sb) {
 		shootBehavior = sb;
 	}
-	public void setProtectBehavior(ProtectBehavior pb) {
-		protectBehavior = pb;
+	public void setProtectionBehavior(ProtectionBehavior pb) {
+		protectionBehavior = pb;
 	}
 }
