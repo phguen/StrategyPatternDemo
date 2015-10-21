@@ -1,5 +1,16 @@
+package a_Context;
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+
+import c_ConcreteStrategies.DontFly;
+import c_ConcreteStrategies.DontShoot;
+import c_ConcreteStrategies.NoProtection;
+import b_Strategy.FlyBehavior;
+import b_Strategy.ProtectionBehavior;
+import b_Strategy.ShootBehavior;
 
 
 public abstract class Spaceship {

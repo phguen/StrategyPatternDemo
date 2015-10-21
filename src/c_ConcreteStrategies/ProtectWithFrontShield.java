@@ -1,4 +1,7 @@
+package c_ConcreteStrategies;
 import java.awt.Graphics;
+
+import b_Strategy.ProtectionBehavior;
 
 
 public class ProtectWithFrontShield implements ProtectionBehavior {

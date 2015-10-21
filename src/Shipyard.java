@@ -1,4 +1,7 @@
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +10,14 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+import c_ConcreteStrategies.NoProtection;
+import c_ConcreteStrategies.ProtectWithDoubleShield;
+import c_ConcreteStrategies.ProtectWithFrontShield;
+import c_ConcreteStrategies.ProtectWithFullShield;
+import a_Context.BoringStandardShip;
+import a_Context.Spaceship;
+import a_Context.SuperDuperShip;
 
 
 public class Shipyard extends JPanel implements ActionListener {
@@ -43,8 +54,10 @@ public class Shipyard extends JPanel implements ActionListener {
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(this.background, this.x, 0, null);
-		spaceship.paint(g);
-		System.out.println(this.x);
+		Graphics2D g2 = (Graphics2D) g;
+	    g2.setStroke(new BasicStroke(4));
+	    g2.setColor(new Color(255255255));
+		spaceship.paint(g2);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
